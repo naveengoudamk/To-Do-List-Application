@@ -1,9 +1,72 @@
-To-Do List Application (Spring Boot)A RESTful web service built with Java and Spring Boot that allows users to manage their daily tasks. This project demonstrates the implementation of a standard 3-tier architecture (Controller, Service, Repository).🚀 FeaturesCreate Tasks: Add new items to your list.Read Tasks: View all tasks or search for a specific one by ID.Update Tasks: Mark tasks as completed or edit the description.Delete Tasks: Remove tasks once they are no longer needed.Persistence: Data is stored in an H2/MySQL database (choose based on your config).🛠️ Tech StackBackend: Java 17/21, Spring Boot 3.xData Access: Spring Data JPA, HibernateDatabase: H2 (In-Memory) / MySQLBuild Tool: MavenUtilities: Lombok (to reduce boilerplate)📋 PrerequisitesBefore running this project, ensure you have:JDK 17 or higher installed.Maven installed.An IDE (IntelliJ IDEA, Eclipse, or VS Code).⚙️ Installation & SetupClone the repository:bashgit clone https://github.com
-cd todo-list-springboot
-Use code with caution.Build the project:bashmvn clean install
-Use code with caution.Run the application:bashmvn spring-boot:run
-Use code with caution.The server will start at http://localhost:8080.🛣️ API EndpointsMethodEndpointDescriptionGET/api/todosFetch all tasksPOST/api/todosCreate a new taskGET/api/todos/{id}Get task by IDPUT/api/todos/{id}Update an existing taskDELETE/api/todos/{id}Delete a task🧪 Testing with PostmanOpen Postman.Set the method to POST.Use the URL: http://localhost:8080/api/todos.In the Body tab, select raw and JSON, then paste:json{
-  "task": "Learn Spring Boot Security",
-  "completed": false
-}
-Use code with caution.
+# To-Do List Application (Spring Boot)
+
+A production-ready RESTful web service built with the **Java Spring Boot** stack. This project serves as a foundation for learning CRUD operations, JPA persistence, and REST API design patterns.
+
+## 🚀 Features
+- **Full CRUD Support:** Create, Read, Update, and Delete tasks.
+- **Status Management:** Toggle tasks between 'Pending' and 'Completed'.
+- **Validation:** Ensures tasks are not empty before saving.
+- **H2 Console Access:** View your database tables in real-time via a web browser.
+- **Auto-Documentation:** Built with industry-standard naming conventions.
+
+## 🛠️ Tech Stack
+- **Language:** Java 17+
+- **Framework:** Spring Boot 3.x
+- **Persistence:** Spring Data JPA / Hibernate
+- **Database:** H2 (In-memory for development)
+- **Build Tool:** Maven
+- **Boilerplate:** Lombok
+
+## 📋 Prerequisites
+- **JDK 17** or higher
+- **Maven 3.6+**
+- **IDE** (IntelliJ IDEA recommended)
+
+## ⚙️ Installation & Setup
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com
+   cd todo-list-springboot
+   ```
+
+2. **Configure Database (Optional):**
+   By default, it uses an H2 in-memory database. To view it, start the app and go to:
+   `http://localhost:8080/h2-console`
+   - **JDBC URL:** `jdbc:h2:mem:testdb`
+   - **User:** `sa`
+   - **Password:** (leave blank)
+
+3. **Run the Application:**
+   ```bash
+   mvn spring-boot:run
+   ```
+   The application will be available at `http://localhost:8080`.
+
+## 🛣️ API Documentation
+
+### Base URL: `/api/todos`
+
+
+| Method | Endpoint | Description | Sample Request Body |
+| :--- | :--- | :--- | :--- |
+| **GET** | `/` | Get all tasks | N/A |
+| **POST** | `/` | Create a task | `{"task": "Study JPA", "completed": false}` |
+| **GET** | `/{id}` | Get task by ID | N/A |
+| **PUT** | `/{id}` | Update task | `{"task": "Study JPA", "completed": true}` |
+| **DELETE**| `/{id}` | Delete task | N/A |
+
+## 🧪 Testing with cURL
+You can test the API directly from your terminal:
+
+**Create a task:**
+```bash
+curl -X POST http://localhost:8080/api/todos -H "Content-Type: application/json" -d '{"task": "Finish Readme", "completed": false}'
+```
+
+**Get all tasks:**
+```bash
+curl http://localhost:8080/api/todos
+```
+
+## 📝 License
+Distributed under the MIT License. See `LICENSE` for more information.
