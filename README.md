@@ -1,2 +1,1 @@
-# To-Do-List-Application
-Core Concepts: CRUD operations (Create, Read, Update, Delete), REST controllers, and basic database connectivity.Goal: Learn how to send data from a frontend form and save it to a database.
+A To-Do List Application is the quintessential project for mastering the Java Spring Boot stack. It teaches you the "Controller-Service-Repository" pattern, which is the industry standard for building scalable enterprise applications
