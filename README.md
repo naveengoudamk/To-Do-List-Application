@@ -1,4 +1,4 @@
-# To-Do List Application (Spring Boot)
+# To-Do List Application (Spring Boot / java full stack )
 
 A production-ready RESTful web service built with the **Java Spring Boot** stack. This project serves as a foundation for learning CRUD operations, JPA persistence, and REST API design patterns.
 
